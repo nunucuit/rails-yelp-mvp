@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @restaurant %>
+
+
+  <% @restaurant.reviews.each do |review| %>
+  <%= review.content %>
+    <%= review.rating %>
+  <% end %>
+
+
+<%= link_to "add review", new_restaurant_review_path(@restaurant) %>
+
+
+<div>
+  <%= link_to "Back to restaurants", restaurants_path %>
+</div>
